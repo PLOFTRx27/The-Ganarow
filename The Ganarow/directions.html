@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> How to play </title>
+<script src="https://simplycodingcourses.com/files/simplyjs/simply.js"></script>
+<script>
+function start(){
+sjs.open();
+
+//Background Music
+var playM = new Audio('Music/ClassyBeat.mp3');
+var toggle = true;
+var musicOn = false;
+sjs.keyDown(W_KEY, function(){
+if(toggle == true){
+if(musicOn == false){
+playM.play();
+musicOn = true;
+} else {
+playM.pause();
+musicOn = false;
+}
+toggle = false;
+setTimeout(function(){
+toggle = true;
+},2000);
+} //end if toggle statement
+}); //end keyDown function
+
+var game_text = new sjs.Text("In this game you are a wizard and use your arrow keys to control your player. Press the up key to jump. Press the left and right keys to walk right and left. Press the space key, after you collected the potion at the beginning of the course to shoot water drops at the Ganarow! Press the W key to hear music on any page, even this one! Make sure to start on level 1, you will see why. Enjoy!!!",16,"#800080");
+game_text.centerH().offset(0, 0);
+
+var startBtn = new sjs.Button("Go Back", function(){
+window.location = "index.html";
+});
+
+startBtn.center();
+
+var startBtn = new sjs.Button("Level Select", function(){
+window.location = "levels4.html";
+});
+
+startBtn.offset(193, 220);
+
+var startBtn = new sjs.Button("Credits", function(){
+window.location = "credits.html";
+});
+
+startBtn.offset(211, 253);
+
+var info_text = new sjs.Text("Created By Gage Grommesh",20,"purple");
+
+info_text.bottom().centerH();
+
+} //end start
+</script>
+</head>
+<body onload="start()">
+<h1> How to play </h1>
+
+<div id="target" style="margin:auto;background:black;"></div>
+</body>
+</html>

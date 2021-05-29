@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Menu </title>
+<script src="https://simplycodingcourses.com/files/simplyjs/simply.js"></script>
+<script>
+function start(){
+sjs.open();
+
+//Background Music
+var playM = new Audio('Music/ClassyBeat.mp3');
+var toggle = true;
+var musicOn = false;
+sjs.keyDown(W_KEY, function(){
+if(toggle == true){
+if(musicOn == false){
+playM.play();
+musicOn = true;
+} else {
+playM.pause();
+musicOn = false;
+}
+toggle = false;
+setTimeout(function(){
+toggle = true;
+},2000);
+} //end if toggle statement
+}); //end keyDown function
+
+var menu_text = new sjs.Text("Main Menu", 20, "purple");
+menu_text.centerH();
+
+var startBtn = new sjs.Button("Level Select", function(){
+window.location = "levels.html";
+});
+startBtn.center();
+
+var startBtn = new sjs.Button("How to play", function(){
+window.location = "directions.html";
+});
+
+startBtn.offset(193, 215);
+
+var startBtn = new sjs.Button("Credits", function(){
+window.location = "credits.html";
+});
+
+startBtn.offset(209, 243);
+
+var info_text = new sjs.Text("Created By Gage Grommesh", 20, "purple"); info_text.bottom().centerH();
+
+}
+</script>
+</head>
+<body onload="start()">
+<h1> Main Menu </h1>
+
+<div id="target" style="margin:auto;background:black;"></div>
+</body>
+</html>

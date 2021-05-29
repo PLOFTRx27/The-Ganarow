@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Credits </title>
+<script src="https://simplycodingcourses.com/files/simplyjs/simply.js"></script>
+<script>
+function start(){
+sjs.open();
+
+//Background Music
+var playM = new Audio('Music/ClassyBeat.mp3');
+var toggle = true;
+var musicOn = false;
+sjs.keyDown(W_KEY, function(){
+if(toggle == true){
+if(musicOn == false){
+playM.play();
+musicOn = true;
+} else {
+playM.pause();
+musicOn = false;
+}
+toggle = false;
+ddd
+setTimeout(function(){
+toggle = true;
+},1000);
+} //end if toggle statement
+}); //end keyDown function
+
+var image = new sjs.Image("Images/credits.gif");
+image.setSize(500, 400);
+
+var win_text = new sjs.Text("Credits",28,"purple");
+win_text.centerH();
+
+var startBtn = new sjs.Button("Back", function(){
+window.location = "index.html";
+});
+
+startBtn.offset(0, 0);
+
+} //end start
+</script>
+<body onload="start()">
+<h1> Credits </h1>
+<div id="target" style="margin:auto;background:grey;"></div>
+</body>
+</html>

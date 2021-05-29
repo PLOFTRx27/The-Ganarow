@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Game Over </title>
+<script src="https://simplycodingcourses.com/files/simplyjs/simply.js"></script>
+<script>
+function start(){
+sjs.open("target",500,500);
+var background = new sjs.Image("Images/lose.png");
+
+//Background Music
+var playM = new Audio('Music/120Speed_DunDunDunV2_From_FesliyanStudios.com.mp3');
+var toggle = true;
+var musicOn = false;
+sjs.keyDown(W_KEY, function(){
+if(toggle == true){
+if(musicOn == false){
+playM.play();
+musicOn = true;
+} else {
+playM.pause();
+musicOn = false;
+}
+toggle = false;
+setTimeout(function(){
+toggle = true;
+},2000);
+} //end if toggle statement
+}); //end keyDown function
+
+var gameover_text = new sjs.Text("Game Over! That was a great try! Do you want to go back home, or do you want to see the levels? Your choice! ",28,"purple");
+gameover_text.centerH().offset(0,0);
+
+var startBtn = new sjs.Button("Go Home", function(){
+window.location = "index.html";
+});
+startBtn.center();
+
+var startBtn = new sjs.Button("Level Select", function(){
+window.location = "levels2.html";
+});
+
+startBtn.offset(193, 205);
+
+} //end start
+</script>
+</head>
+<body onload="start()">
+<h1> Game Over </h1>
+
+<div id="target" style="margin:auto;background:black;"></div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Win </title>
+<script src="https://simplycodingcourses.com/files/simplyjs/simply.js"></script>
+<script>
+function start(){
+sjs.open();
+
+//Background Music
+var playM = new Audio('Music/dj-airhorn-sound-effect-kingbeatz_1.mp3');
+var toggle = true;
+var musicOn = false;
+sjs.keyDown(W_KEY, function(){
+if(toggle == true){
+if(musicOn == false){
+playM.play();
+musicOn = true;
+} else {
+playM.pause();
+musicOn = false;
+}
+toggle = false;
+ddd
+setTimeout(function(){
+toggle = true;
+},1000);
+} //end if toggle statement
+}); //end keyDown function
+
+
+var image = new sjs.Image("Images/Winner.gif");
+image.setSize(500, 400);
+
+var win_text = new sjs.Text("You Win!",28,"purple");
+win_text.centerH();
+
+var startBtn = new sjs.Button("Go home", function(){
+window.location = "index.html";
+});
+
+startBtn.center();
+
+var startBtn = new sjs.Button("Level Select", function(){
+window.location = "levels3.html";
+});
+
+startBtn.offset(193, 220);
+
+} //end start
+</script>
+<body onload="start()">
+<h1> Winner!!! </h1>
+
+<div id="target" style="margin:auto;background:grey;"></div>
+</body>
+</html>

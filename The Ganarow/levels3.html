@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Select your level </title>
+<script src="https://simplycodingcourses.com/files/simplyjs/simply.js"></script>
+<script>
+function start(){
+sjs.open();
+
+//Background Music
+var playM = new Audio('Music/ClassyBeat.mp3');
+var toggle = true;
+var musicOn = false;
+sjs.keyDown(W_KEY, function(){
+if(toggle == true){
+if(musicOn == false){
+playM.play();
+musicOn = true;
+} else {
+playM.pause();
+musicOn = false;
+}
+toggle = false;
+setTimeout(function(){
+toggle = true;
+},2000);
+} //end if toggle statement
+}); //end keyDown function
+
+
+var menu_text = new sjs.Text("Select Level", 20, "purple");
+menu_text.centerH();
+
+var startBtn = new sjs.Button("Go Back", function(){
+window.location = "win.html";
+});
+
+startBtn.offset(0, 0);
+
+var startBtn = new sjs.Button("Credits", function(){
+window.location = "credits.html";
+});
+
+startBtn.offset(427, 0);
+
+var startBtn = new sjs.Button("Level 1", function(){
+window.location = "level1.html";
+});
+
+startBtn.offset(100, 50);
+
+var startBtn = new sjs.Button("Level 2", function(){
+window.location = "level2.html";
+});
+
+startBtn.offset(100, 100);
+
+var startBtn = new sjs.Button("Level 3", function(){
+window.location = "level3.html";
+});
+
+startBtn.offset(100, 150);
+
+var startBtn = new sjs.Button("Level 4", function(){
+window.location = "level4.html";
+});
+
+startBtn.offset(100, 200);
+
+var startBtn = new sjs.Button("Level 5", function(){
+window.location = "level5.html";
+});
+
+startBtn.offset(100, 250);
+
+var startBtn = new sjs.Button("Level 6", function(){
+window.location = "level6.html";
+});
+
+startBtn.offset(315, 50);
+
+var startBtn = new sjs.Button("Level 7", function(){
+window.location = "level7.html";
+});
+
+startBtn.offset(315, 100);
+
+var startBtn = new sjs.Button("Level 8", function(){
+window.location = "level8.html";
+});
+
+startBtn.offset(315, 150);
+
+var startBtn = new sjs.Button("Level 9", function(){
+window.location = "level9.html";
+});
+
+startBtn.offset(315, 200);
+
+var startBtn = new sjs.Button("Level 10", function(){
+window.location = "level10.html";
+});
+
+startBtn.offset(315, 250);
+
+var info_text = new sjs.Text("Created By Gage Grommesh", 20, "purple"); info_text.bottom().centerH();
+
+}
+</script>
+</head>
+<body onload="start()">
+<h1> Select your level </h1>
+
+<div id="target" style="margin:auto;background:black;"></div>
+</body>
+</html>
